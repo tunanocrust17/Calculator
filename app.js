@@ -1,25 +1,31 @@
 //Math functions to be used on calculator
 
-function add(num1, num2){
-    return num1 + num2;
+function operate(num1, operator, num2){
+    if (operator === "+"){
+        num1 + num2;
+    } else if(operator === "-"){
+        num1 - num2;
+    } else if(operator === "*"){
+        num1 * num2;
+    } else if(operator === "/"){
+        num1 / num2;
+    }
 }
 
-function subtract(num1, num2){
-    return num1 - num2;
-}
+//DOM variables
+let numberBtn = document.querySelectorAll('.number');
 
-function multiply(num1, num2){
-    return num1 * num2;
-}
 
-function divide(num1, num2){
-    return num1 / num2;
-}
 
 //Variables to hold user inputs
 
-let num1 = 0
-let num2 = 0
-let operator = +;
+let userNums = [];
+let operator = [];
+let tempNum = "";
 
-console.log(num1 + operator + num2);
+numberBtn.forEach(item =>{
+    item.addEventListener('click', e => {
+        tempNum += e.target.innerHTML;
+        console.log(tempNum);
+    })
+})
