@@ -19,6 +19,7 @@ let minusBtn = document.querySelectorAll('.minus')
 let multiplyBtn = document.querySelectorAll('.multiply');
 let divideBtn = document.querySelectorAll('.divide');
 let displayText = document.getElementById('display');
+let clearBtn = document.querySelectorAll('.clear');
 
 
 
@@ -72,6 +73,7 @@ minusBtn.forEach(item => {
         
     if (userNums[0] !== undefined && userNums[1] !== undefined){  
         result = operate(userNums[0], operator[0], userNums[1]);
+        displayText.innerHTML = result;
         userNums[0] = result;
         userNums.pop();
         operator.shift();
@@ -96,6 +98,28 @@ multiplyBtn.forEach(item => {
         
     if (userNums[0] !== undefined && userNums[1] !== undefined){  
         result = operate(userNums[0], operator[0], userNums[1]);
+        displayText.innerHTML = result;
+        userNums[0] = result;
+        userNums.pop();
+        operator.shift();
+        tempNum="";
+    } else if(tempNum.length >0){
+        tempNum="";
+    }
+
+}); 
+})
+
+//divide method
+divideBtn.forEach(item => {
+    item.addEventListener('click', e => {
+        userNums.push(tempNum);
+        operator.push("/");
+        displayText.innerHTML = "/";
+        
+    if (userNums[0] !== undefined && userNums[1] !== undefined){  
+        result = operate(userNums[0], operator[0], userNums[1]);
+        displayText.innerHTML = result;
         userNums[0] = result;
         userNums.pop();
         operator.shift();
@@ -111,26 +135,12 @@ multiplyBtn.forEach(item => {
 }); 
 })
 
-//divide method
-divideBtn.forEach(item => {
+//clear button method
+clearBtn.forEach(item => {
     item.addEventListener('click', e => {
-        userNums.push(tempNum);
-        operator.push("/");
-        displayText.innerHTML = "/";
-        
-    if (userNums[0] !== undefined && userNums[1] !== undefined){  
-        result = operate(userNums[0], operator[0], userNums[1]);
-        userNums[0] = result;
-        userNums.pop();
-        operator.shift();
-        tempNum="";
-    } else if(tempNum.length >0){
-        tempNum="";
-    }
-
-    console.log(operator[0]);
-    console.log(userNums[0]);
-    console.log(userNums[1]);
-    console.log(result);
-}); 
+        userNums = [];
+        operator = [];
+        tempNum = '';
+        displayText.innerHTML = 0;
+    })
 })
