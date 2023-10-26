@@ -34,12 +34,16 @@ numberBtn.forEach(item =>{
 
 operatorBtn.forEach(item => {
     item.addEventListener('click', e => {
-    if (userNums[0] !== undefined && userNums[1] !== undefined){
-        result = operate(userNums[0], operator[0], userNums[1]);
- 
-    } else if(tempNum.length >0){
         userNums.push(tempNum);
-        operator.push("+")
+        operator.push("+");
+        
+    if (userNums[0] !== undefined && userNums[1] !== undefined){  
+        result = operate(userNums[0], operator[0], userNums[1]);
+        userNums[0] = result;
+        userNums.pop();
+        operator.pop();
+        tempNum="";
+    } else if(tempNum.length >0){
         tempNum="";
     }
 
