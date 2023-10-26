@@ -16,7 +16,8 @@ function operate(num1, operator, num2){
 let numberBtn = document.querySelectorAll('.number');
 let plusBtn = document.querySelectorAll('.plus');
 let minusBtn = document.querySelectorAll('.minus')
-let multiplyBtn = document.querySelectorAll('.multiply')
+let multiplyBtn = document.querySelectorAll('.multiply');
+let divideBtn = document.querySelectorAll('.divide');
 
 
 
@@ -58,10 +59,57 @@ plusBtn.forEach(item => {
 }); 
 })
 
+//minus method
 minusBtn.forEach(item => {
     item.addEventListener('click', e => {
         userNums.push(tempNum);
         operator.push("-");
+        
+    if (userNums[0] !== undefined && userNums[1] !== undefined){  
+        result = operate(userNums[0], operator[0], userNums[1]);
+        userNums[0] = result;
+        userNums.pop();
+        operator.shift();
+        tempNum="";
+    } else if(tempNum.length >0){
+        tempNum="";
+    }
+
+    console.log(operator[0]);
+    console.log(userNums[0]);
+    console.log(userNums[1]);
+    console.log(result);
+}); 
+})
+
+//multiply method
+multiplyBtn.forEach(item => {
+    item.addEventListener('click', e => {
+        userNums.push(tempNum);
+        operator.push("*");
+        
+    if (userNums[0] !== undefined && userNums[1] !== undefined){  
+        result = operate(userNums[0], operator[0], userNums[1]);
+        userNums[0] = result;
+        userNums.pop();
+        operator.shift();
+        tempNum="";
+    } else if(tempNum.length >0){
+        tempNum="";
+    }
+
+    console.log(operator[0]);
+    console.log(userNums[0]);
+    console.log(userNums[1]);
+    console.log(result);
+}); 
+})
+
+//divide method
+divideBtn.forEach(item => {
+    item.addEventListener('click', e => {
+        userNums.push(tempNum);
+        operator.push("/");
         
     if (userNums[0] !== undefined && userNums[1] !== undefined){  
         result = operate(userNums[0], operator[0], userNums[1]);
