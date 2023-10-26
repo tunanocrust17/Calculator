@@ -16,6 +16,7 @@ function operate(num1, operator, num2){
 let numberBtn = document.querySelectorAll('.number');
 let plusBtn = document.querySelectorAll('.plus');
 let minusBtn = document.querySelectorAll('.minus')
+let multiplyBtn = document.querySelectorAll('.multiply')
 
 
 
@@ -39,12 +40,12 @@ plusBtn.forEach(item => {
     item.addEventListener('click', e => {
         userNums.push(tempNum);
         operator.push("+");
-        
+         
     if (userNums[0] !== undefined && userNums[1] !== undefined){  
         result = operate(userNums[0], operator[0], userNums[1]);
         userNums[0] = result;
         userNums.pop();
-        operator.pop();
+        operator.shift();
         tempNum="";
     } else if(tempNum.length >0){
         tempNum="";
@@ -66,7 +67,7 @@ minusBtn.forEach(item => {
         result = operate(userNums[0], operator[0], userNums[1]);
         userNums[0] = result;
         userNums.pop();
-        operator.pop();
+        operator.shift();
         tempNum="";
     } else if(tempNum.length >0){
         tempNum="";
