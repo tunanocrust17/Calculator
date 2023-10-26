@@ -20,6 +20,7 @@ let multiplyBtn = document.querySelectorAll('.multiply');
 let divideBtn = document.querySelectorAll('.divide');
 let displayText = document.getElementById('display');
 let clearBtn = document.querySelectorAll('.clear');
+let equalBtn = document.querySelectorAll('.equal');
 
 
 
@@ -56,11 +57,6 @@ plusBtn.forEach(item => {
     } else if(tempNum.length >0){
         tempNum="";
     }
-
-    console.log(operator[0]);
-    console.log(userNums[0]);
-    console.log(userNums[1]);
-    console.log(result);
 }); 
 })
 
@@ -81,11 +77,6 @@ minusBtn.forEach(item => {
     } else if(tempNum.length >0){
         tempNum="";
     }
-
-    console.log(operator[0]);
-    console.log(userNums[0]);
-    console.log(userNums[1]);
-    console.log(result);
 }); 
 })
 
@@ -127,11 +118,6 @@ divideBtn.forEach(item => {
     } else if(tempNum.length >0){
         tempNum="";
     }
-
-    console.log(operator[0]);
-    console.log(userNums[0]);
-    console.log(userNums[1]);
-    console.log(result);
 }); 
 })
 
