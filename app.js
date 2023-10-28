@@ -20,7 +20,7 @@ let multiplyBtn = document.querySelectorAll('.multiply');
 let divideBtn = document.querySelectorAll('.divide');
 let displayText = document.getElementById('display');
 let clearBtn = document.querySelectorAll('.clear');
-let equalBtn = document.querySelectorAll('.equal');
+let equalBtn = document.querySelectorAll('.equals');
 
 
 
@@ -128,5 +128,17 @@ clearBtn.forEach(item => {
         operator = [];
         tempNum = '';
         displayText.innerHTML = 0;
+    })
+})
+
+equalBtn.forEach(item => {
+    item.addEventListener('click', e => {
+        userNums.push(tempNum);
+        result = operate(userNums[0], operator[0], userNums[1]);
+        displayText.innerHTML = result;
+        userNums[0] = result;
+        userNums.pop();
+        operator.shift();
+        tempNum="";
     })
 })
