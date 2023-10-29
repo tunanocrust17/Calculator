@@ -126,7 +126,7 @@ clearBtn.forEach(item => {
     item.addEventListener('click', e => {
         userNums = [];
         operator = [];
-        tempNum = '';
+        tempNum = "";
         displayText.innerHTML = 0;
     })
 })
@@ -138,7 +138,7 @@ equalBtn.forEach(item => {
         displayText.innerHTML = result;
         userNums[0] = result;
         userNums.pop();
-        operator.shift();
+        // operator.shift();
         tempNum="";
     })
 })
