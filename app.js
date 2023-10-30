@@ -43,60 +43,96 @@ numberBtn.forEach(item =>{
 // Method that will either push the plus operator to the operator array or if there are two items in the userNums array it will add them together when clicking the plus operator.
 plusBtn.forEach(item => {
     item.addEventListener('click', e => {
-        userNums.push(tempNum);
-        operator.push("+");
-        displayText.innerHTML = "+";
-         
-    if (userNums[0] !== undefined && userNums[1] !== undefined){  
+
+        console.log(userNums[0]);
+        console.log(userNums[1]);
+        console.log(operator[0]);
+        console.log(result);
+
+        if(tempNum === ""){
+            operator.push("+");
+            displayText.innerHTML = "+";
+        } else if(tempNum.length >0){
+            operator.push("+");
+            userNums.push(tempNum);
+            tempNum="";
+        }
+        
+        if (userNums[0] !== undefined && userNums[1] !== undefined){
+        // operator.push("+")  
         result = operate(userNums[0], operator[0], userNums[1]);
         displayText.innerHTML = result;
         userNums[0] = result;
         userNums.pop();
         operator.shift();
         tempNum="";
-    } else if(tempNum.length >0){
-        tempNum="";
-    }
+        } 
+
+
+
 }); 
 })
 
 //minus method
 minusBtn.forEach(item => {
     item.addEventListener('click', e => {
-        userNums.push(tempNum);
-        operator.push("-");
-        displayText.innerHTML = "-";
+        console.log(userNums[0]);
+        console.log(userNums[1]);
+        console.log(operator[0]);
+        console.log(result);
+
+        if(tempNum === ""){
+            operator.push("-");
+            displayText.innerHTML = "-";
+        } else if(tempNum.length >0){
+            operator.push("-");
+            userNums.push(tempNum);
+            tempNum="";
+        }
         
-    if (userNums[0] !== undefined && userNums[1] !== undefined){  
+        if (userNums[0] !== undefined && userNums[1] !== undefined){  
+        // operator.push("-")
         result = operate(userNums[0], operator[0], userNums[1]);
         displayText.innerHTML = result;
         userNums[0] = result;
         userNums.pop();
         operator.shift();
         tempNum="";
-    } else if(tempNum.length >0){
-        tempNum="";
-    }
+        } 
+
+
+
 }); 
 })
 
 //multiply method
 multiplyBtn.forEach(item => {
     item.addEventListener('click', e => {
-        userNums.push(tempNum);
-        operator.push("*");
-        displayText.innerHTML = "*";
+        console.log(userNums[0]);
+        console.log(userNums[1]);
+        console.log(operator[0]);
+        console.log(result);
+
+        if(tempNum === ""){
+            operator.push("*");
+            displayText.innerHTML = "*";
+        } else if(tempNum.length >0){
+            operator.push("*");
+            userNums.push(tempNum);
+            tempNum="";
+        }
         
-    if (userNums[0] !== undefined && userNums[1] !== undefined){  
+        if (userNums[0] !== undefined && userNums[1] !== undefined){
+        // operator.push("*")  
         result = operate(userNums[0], operator[0], userNums[1]);
         displayText.innerHTML = result;
         userNums[0] = result;
         userNums.pop();
         operator.shift();
         tempNum="";
-    } else if(tempNum.length >0){
-        tempNum="";
-    }
+        }
+
+
 
 }); 
 })
@@ -104,20 +140,30 @@ multiplyBtn.forEach(item => {
 //divide method
 divideBtn.forEach(item => {
     item.addEventListener('click', e => {
-        userNums.push(tempNum);
-        operator.push("/");
-        displayText.innerHTML = "/";
+        console.log(userNums[0]);
+        console.log(userNums[1]);
+        console.log(operator[0]);
+        console.log(result);
+
+        if(tempNum === ""){
+            operator.push("/");
+            displayText.innerHTML = "/";
+        } else if(tempNum.length >0){
+            operator.push("/");
+            userNums.push(tempNum);
+            tempNum="";
+        }
         
-    if (userNums[0] !== undefined && userNums[1] !== undefined){  
+        if (userNums[0] !== undefined && userNums[1] !== undefined){
+        // operator.push("/")  
         result = operate(userNums[0], operator[0], userNums[1]);
         displayText.innerHTML = result;
         userNums[0] = result;
         userNums.pop();
         operator.shift();
         tempNum="";
-    } else if(tempNum.length >0){
-        tempNum="";
-    }
+        }
+
 }); 
 })
 
@@ -134,11 +180,22 @@ clearBtn.forEach(item => {
 equalBtn.forEach(item => {
     item.addEventListener('click', e => {
         userNums.push(tempNum);
+        
+        if(operator.length > 1){
+            operator.shift();
+        }
+
         result = operate(userNums[0], operator[0], userNums[1]);
         displayText.innerHTML = result;
         userNums[0] = result;
         userNums.pop();
-        // operator.shift();
+        operator.shift();
         tempNum="";
-    })
+
+        console.log(userNums[0]);
+        console.log(userNums[1]);
+        console.log(operator[0]);
+        console.log(result);
+
+    });
 })
