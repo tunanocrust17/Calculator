@@ -67,9 +67,6 @@ plusBtn.forEach(item => {
         operator.shift();
         tempNum="";
         } 
-
-
-
 }); 
 })
 
@@ -99,9 +96,6 @@ minusBtn.forEach(item => {
         operator.shift();
         tempNum="";
         } 
-
-
-
 }); 
 })
 
@@ -131,9 +125,6 @@ multiplyBtn.forEach(item => {
         operator.shift();
         tempNum="";
         }
-
-
-
 }); 
 })
 
