@@ -197,9 +197,15 @@ equalBtn.forEach(item => {
 //postive / negative button
 negativeBtn.forEach(item => {
     item.addEventListener('click', ()=> {
+        if(tempNum.length>0){
         signSwitch = tempNum * -1;
         tempNum = signSwitch.toString();
         displayText.innerHTML = tempNum;
+        } else {
+            result = result * -1;
+            userNums[0]=result;
+            displayText.innerHTML = result;
+        }
     })
 })
 
