@@ -21,6 +21,7 @@ let divideBtn = document.querySelectorAll('.divide');
 let displayText = document.getElementById('display');
 let clearBtn = document.querySelectorAll('.clear');
 let equalBtn = document.querySelectorAll('.equals');
+let negativeBtn = document.querySelectorAll('.negative');
 
 
 
@@ -189,4 +190,12 @@ equalBtn.forEach(item => {
         console.log(result);
 
     });
+})
+
+//postive / negative button
+negativeBtn.forEach(item => {
+    item.addEventListener('click', ()=>{
+        tempNum = tempNum * -1;
+        displayText.innerHTML = tempNum;
+    })
 })
