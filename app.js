@@ -22,6 +22,7 @@ let displayText = document.getElementById('display');
 let clearBtn = document.querySelectorAll('.clear');
 let equalBtn = document.querySelectorAll('.equals');
 let negativeBtn = document.querySelectorAll('.negative');
+let percentageBtn = document.querySelectorAll('.percentage')
 
 
 
@@ -195,7 +196,17 @@ equalBtn.forEach(item => {
 //postive / negative button
 negativeBtn.forEach(item => {
     item.addEventListener('click', ()=>{
-        tempNum = tempNum * -1;
+        signSwitch = tempNum * -1;
+        tempNum = signSwitch.toString();
+        displayText.innerHTML = tempNum;
+    })
+})
+
+//percentage button logic
+percentageBtn.forEach(item =>{
+    item.addEventListener('click', ()=>{
+        numberPercentage = tempNum/100;
+        tempNum = numberPercentage.toString();
         displayText.innerHTML = tempNum;
     })
 })
