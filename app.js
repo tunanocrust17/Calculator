@@ -218,9 +218,13 @@ percentageBtn.forEach(item =>{
     })
 })
 
-// //decimal point button logic
-// decimalBtn.forEach(item => {
-//     item.addEventListener('click', () => {
-        
-//     })
-// })
+//decimal point button logic
+decimalBtn.forEach(item => {
+    item.addEventListener('click', e => {
+        if(Number.isInteger(+tempNum)===true){
+            tempNum += e.target.innerHTML;
+            displayText.innerHTML = tempNum;
+            console.log(tempNum);
+        }         
+    })
+})
